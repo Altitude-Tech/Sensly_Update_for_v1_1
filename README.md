@@ -1,1 +1,1 @@
-# Sensly_Update
+# Sensly Firmware Updater for v1.1
