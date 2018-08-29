@@ -39,14 +39,9 @@ try:
 
     port = raw_input("Please enter your UART port, for RPI 2 its /dev/ttyAMA0 and for RPI 3 its /dev/ttyS0: ")
 
-    # Get Filename of binary file to be uploaded
-
-    filename = raw_input("Please enter the firmware filename, including path: ")
-
     # Run stm32loader to upload new firmware
-    #output = "python stm32loader.py -e -w -v -p " + port + " -b 115200 " + filename    
-    output = "python stm32loader.py -e -w -v -p /dev/serial0 -b 115200 Sensly_HAT_Firmware-Operation.bin"    
-    #output = "python stm32loader.py -e -w -v -p /dev/ttySOFT0 -b 1200 Sensly_HAT-Calibration.bin"    
+    output = "python stm32loader.py -e -w -v -p " + port + " -b 115200 Sensly_HAT_Firmware-Operation.bin"     
+        
     os.system(output)
 
     time.sleep(1)
@@ -55,18 +50,6 @@ try:
     Bootloader_Mode_Off()
 
     time.sleep(1)
-
-    # Sometimes it fails so try to upload again
-  
-    #Bootloader_Mode_On()
-
-    #time.sleep(1)
-    
-    #os.system(output)
-
-    #time.sleep(1)
-    
-    #Bootloader_Mode_Off()
     
 
 except KeyboardInterrupt:
