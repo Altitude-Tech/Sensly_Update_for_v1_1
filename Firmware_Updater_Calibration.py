@@ -39,7 +39,7 @@ try:
     port = raw_input("Please enter your UART port, for RPI 2 its /dev/ttyAMA0 and for RPI 3 its /dev/ttyS0: ")
 
     # Run stm32loader to upload new firmware
-    output = "python stm32loader.py -e -w -v -p " + port + "-b 115200 Sensly_HAT_Firmware-Calibration.bin"   
+    output = "python stm32loader.py -e -w -v -p " + port + " -b 115200 Sensly_HAT_Firmware-Calibration.bin"   
            
     os.system(output)
 
